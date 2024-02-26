@@ -185,9 +185,6 @@ jobs:
         namespace: ${{ env.OPENSHIFT_NAMESPACE }}
         port: ${{ env.APP_PORT }}
 
-    - name: Expose with Edge node
-      run: oc expose svc/${{ env.APP_NAME }} --name=${{ steps.deploy-and-expose.outputs.route }} --hostname=${{ env.APP_NAME }}-pvnsekhar-dev.apps.sandbox-m4.g2pi.p1.openshiftapps.com --insecure-policy=Redirect
-
     - name: Print application URL
       env:
         ROUTE: ${{ steps.deploy-and-expose.outputs.route }}
