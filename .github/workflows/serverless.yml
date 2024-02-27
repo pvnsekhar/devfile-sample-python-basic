@@ -130,9 +130,7 @@ jobs:
         service_name: ${{ env.APP_NAME }}
         container_image: ${{ steps.push-image.outputs.registry-path }}
         namespace: ${{ env.OPENSHIFT_NAMESPACE }}
-        kn_extra_args: >
-              --min-scale=1
-              --max-scale=2
+        
 
     - name: Print application URL
       env:
