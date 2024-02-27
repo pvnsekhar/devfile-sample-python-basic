@@ -130,6 +130,7 @@ jobs:
         service_name: ${{ env.APP_NAME }}
         container_image: ${{ steps.push-image.outputs.registry-path }}
         namespace: ${{ env.OPENSHIFT_NAMESPACE }}
+        force_create: true
         
 
     - name: Print application URL
